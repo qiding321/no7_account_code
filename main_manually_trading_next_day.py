@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Created on 2016/12/9 16:45
 
@@ -14,6 +14,7 @@ E:\\MyTrading\\IntradayAccount\\Account\\No7DailyAccount\\adj_data.csv
 @files_out:
 E:\\MyTrading\\IntradayAccount\\Account\\No7DailyAccount\\trade.csv
 E:\\MyTrading\\IntradayAccount\\Account\\No7DailyAccount\\holding.csv
+E:\\MyTrading\\IntradayAccount\\Account\\No7DailyAccount\\trade_next_day_N07_today_str.csv
 """
 
 import my_path
@@ -106,7 +107,9 @@ def read_target_data(today_str, today_path):
 def get_adjust_data(today_path):
     adj_path = today_path + 'adj_data.csv'
     try:
-        data = pd.read_csv(adj_path).rename(columns={'trade_tomorrow': 'vol_adjust'})
+        data = pd.read_csv(adj_path).rename(columns={'代码': 'coid', '股数': 'vol_adjust'})
+        data = data[['coid', 'vol_adjust']]
+        data['vol_adjust'] /= 100
     except OSError:
         print('adjust data not found, use None replace')
         data = pd.DataFrame(columns=['coid', 'vol_adjust'])

@@ -13,11 +13,11 @@ name = socket.gethostname()
 no_7_shiming_path = r'\\SHIMING\trading\holding_files\7\holding_evening' + '\\'
 no_7_shiming_path_output = r'\\SHIMING\trading\target_files\7m' + '\\'
 
-if name == '2013-20151201LG':
-    output_path_root = r'E:\MyTrading\IntradayAccount\Account' + '\\'
-    log_path = r'E:\MyTrading\IntradayAccount\Log\log.log'
+# if name == '2013-20151201LG':
+output_path_root = r'\\2013-20151201LG\IntradayAccount\Account' + '\\'
+log_path = r'\\2013-20151201LG\IntradayAccount\Log\log.log'
 
-    output_path_account_summary = output_path_root + 'IntradayAccountSummary' + '\\'
+output_path_account_summary = output_path_root + 'IntradayAccountSummary' + '\\'
 
-    output_path_no_7_daily_account = output_path_root + 'No7DailyAccount' + '\\'
-    final_stock_path_no_7 = r'\\SHIMING\trading\target_files\7' + '\\'
+output_path_no_7_daily_account = output_path_root + 'No7DailyAccount' + '\\'
+final_stock_path_no_7 = r'\\SHIMING\trading\target_files\7' + '\\'
